@@ -58,4 +58,4 @@ No automated containment or session revocation has been demonstrated.
 - Missing metric data is treated as non-breaching, so an OK state
   alone does not prove the logging pipeline is healthy.
 - No broad account-compromise investigation was performed.
-- Static security scanning remains pending. Cleanup verification completed.
+- Local and GitHub Actions Checkov scans both reported 54 passed, 10 failed and 0 skipped. Findings remain open and unsuppressed. Cleanup verification completed.

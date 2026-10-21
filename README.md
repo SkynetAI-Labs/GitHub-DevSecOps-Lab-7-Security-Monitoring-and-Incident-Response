@@ -5,7 +5,7 @@ security-event investigation and verified alarm delivery.
 
 **Status:** Live testing completed. All 19 Terraform resources destroyed;
 independent AWS API checks confirmed removal. Ten static findings remain
-open and unsuppressed. GitHub Actions execution is pending.
+open and unsuppressed. GitHub Actions failed on the ten documented Checkov findings.
 
 ## Architecture
 
@@ -82,8 +82,9 @@ The workflow performs:
 It has read-only repository permission and no AWS credentials.
 It contains no deployment or destruction steps.
 
-**CI result: not yet executed or verified.**
-The unsuppressed findings are expected to fail the Checkov step.
+**Verified CI result:** Checkov reported 54 passed, 10 failed and 0 skipped, then exited with code 1. The workflow failed on these unsuppressed findings.
+
+[Verified workflow run](https://github.com/SkynetAI-Labs/GitHub-DevSecOps-Lab-7-Security-Monitoring-and-Incident-Response/actions/runs/39696629214) — tested commit `630c081`.
 
 ## Scope and Limitations
 

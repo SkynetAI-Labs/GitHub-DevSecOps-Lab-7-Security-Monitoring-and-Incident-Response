@@ -37,4 +37,7 @@
   incident-response capability was demonstrated.
 
 ## CI Status
-GitHub Actions has not yet been configured or executed.
+GitHub Actions run 39696629214 scanned commit 630c081.
+Checkov reported 54 passed, 10 failed, 0 skipped and exited with code 1. The overall workflow failed on the documented findings.
+
+[Verified workflow run](https://github.com/SkynetAI-Labs/GitHub-DevSecOps-Lab-7-Security-Monitoring-and-Incident-Response/actions/runs/39696629214)
