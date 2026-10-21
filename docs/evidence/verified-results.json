@@ -1,0 +1,81 @@
+{
+  "simulation": {
+    "started_utc": "2026-10-21T23:29:12.466353+00:00",
+    "region": "eu-north-1",
+    "role_session": "lab7-denied-api-test",
+    "operation": "DescribeInstances",
+    "error_code": "UnauthorizedOperation",
+    "request_id": "5fe1e4c2-5f16-4af3-ae69-4f97d98f3ad3",
+    "outcome": "EXPECTED_DENIAL",
+    "completed_utc": "2026-10-21T23:29:12.517426+00:00"
+  },
+  "matched_events": [
+    {
+      "eventTime": "2026-10-21T23:29:12Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "eu-north-1",
+      "errorCode": "Client.UnauthorizedOperation",
+      "requestID": "5fe1e4c2-5f16-4af3-ae69-4f97d98f3ad3",
+      "eventID": "e0f90d03-19b3-4878-991e-c33884f2f28a",
+      "readOnly": true,
+      "issuer_role_name": "lab7-security-simulation"
+    }
+  ],
+  "alarm_transitions": [
+    {
+      "time": "2026-10-21 23:33:01.394000+00:00",
+      "old_state": "ALARM",
+      "new_state": "OK"
+    },
+    {
+      "time": "2026-10-21 23:30:01.392000+00:00",
+      "old_state": "OK",
+      "new_state": "ALARM"
+    },
+    {
+      "time": "2026-10-21 23:27:01.397000+00:00",
+      "old_state": "INSUFFICIENT_DATA",
+      "new_state": "OK"
+    }
+  ],
+  "queue_receipts": [
+    {
+      "received_utc": "2026-10-21T23:31:48.193349+00:00",
+      "message_id": "70cbd3e7-e37e-40e2-a7e0-b608bdc50c33",
+      "alarm_name": "lab7-security-denied-api",
+      "new_state": "OK",
+      "old_state": "INSUFFICIENT_DATA",
+      "state_change_time": "2026-10-21T23:27:01.397+0000"
+    },
+    {
+      "received_utc": "2026-10-21T23:32:17.226756+00:00",
+      "message_id": "6acfd875-1bd4-41cd-a2d6-6da51718eba2",
+      "alarm_name": "lab7-security-denied-api",
+      "new_state": "ALARM",
+      "old_state": "OK",
+      "state_change_time": "2026-10-21T23:30:01.392+0000"
+    }
+  ],
+  "s3_backup_version_count": 9,
+  "s3_cleanup": {
+    "backup_hashes_verified": true,
+    "deleted_versions_and_markers": 9,
+    "remaining_versions_and_markers": 0
+  },
+  "terraform_resources_created": 19,
+  "terraform_resources_destroyed": 19,
+  "cleanup_verification": {
+    "checked_utc": "2026-10-21T23:45:31.970681+00:00",
+    "results": {
+      "S3 bucket": "ABSENT: NoSuchBucket",
+      "CloudTrail trail": "ABSENT: TrailNotFoundException",
+      "lab7-security-simulation": "ABSENT: NoSuchEntity",
+      "lab7-security-trail-delivery": "ABSENT: NoSuchEntity",
+      "SNS topic": "ABSENT: NotFound",
+      "SQS queue": "ABSENT: AWS.SimpleQueueService.NonExistentQueue",
+      "CloudWatch log group": "ABSENT",
+      "CloudWatch alarm": "ABSENT"
+    }
+  }
+}

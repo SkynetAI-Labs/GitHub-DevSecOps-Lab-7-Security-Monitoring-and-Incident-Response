@@ -1,0 +1,45 @@
+name: Terraform Security Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "1.16.6"
+          terraform_wrapper: false
+
+      - name: Check formatting
+        run: terraform fmt -check -recursive
+
+      - name: Initialize without backend
+        run: terraform init -backend=false -input=false -lockfile=readonly
+
+      - name: Validate configuration
+        run: terraform validate -no-color
+
+      - name: Install Checkov
+        run: |
+          python3 -m venv /tmp/checkov
+          /tmp/checkov/bin/python -m pip install 'checkov==3.3.30'
+
+      - name: Scan Terraform
+        env:
+          PY_COLORS: "0"
+        run: /tmp/checkov/bin/checkov --directory . --framework terraform --skip-path private --compact
