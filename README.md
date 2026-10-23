@@ -1,4 +1,4 @@
-# GitHub DevSecOps Lab 7 — Security Monitoring and Incident Response
+# GitHub DevSecOps Lab 07 — Security Monitoring and Incident Response
 
 A practical AWS learning lab demonstrating a denied API request,
 security-event investigation and verified alarm delivery.
@@ -84,7 +84,7 @@ It contains no deployment or destruction steps.
 
 **Verified CI result:** Checkov reported 54 passed, 10 failed and 0 skipped, then exited with code 1. The workflow failed on these unsuppressed findings.
 
-[Verified workflow run](https://github.com/SkynetAI-Labs/GitHub-DevSecOps-Lab-7-Security-Monitoring-and-Incident-Response/actions/runs/39696629214) — tested commit `630c081`.
+[Verified workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39696629214) — tested commit `630c081`.
 
 ## Scope and Limitations
 
