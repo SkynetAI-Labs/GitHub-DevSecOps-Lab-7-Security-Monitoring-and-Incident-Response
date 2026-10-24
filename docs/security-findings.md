@@ -40,4 +40,18 @@
 GitHub Actions run 39696629214 scanned commit 630c081.
 Checkov reported 54 passed, 10 failed, 0 skipped and exited with code 1. The overall workflow failed on the documented findings.
 
-[Verified workflow run](https://github.com/SkynetAI-Labs/GitHub-DevSecOps-Lab-7-Security-Monitoring-and-Incident-Response/actions/runs/39696629214)
+[Verified workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39696629214)
+
+## Repository audit — 24 October 2026
+
+[Latest reviewed workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39992265407)
+checked commit `94ba90a5bd877db960645af1dc5ee64efff8ca55` on
+23 October 2026. Formatting, initialisation without a backend and Terraform
+validation passed. Checkov 3.3.30 returned 54 passed, 10 failed, 0 skipped.
+The workflow failed on the documented findings; no finding was suppressed.
+
+The published verified-results.json is a sanitised historical summary.
+Raw logs, backup hashes and complete AWS API responses remain private and
+were not inspected during this repository audit. No live test was repeated.
+The 19 resource blocks match the recorded deployment/destruction count;
+this consistency check does not independently prove historical AWS operations.
