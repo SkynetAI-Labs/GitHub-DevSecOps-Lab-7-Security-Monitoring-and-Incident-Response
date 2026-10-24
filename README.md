@@ -140,3 +140,9 @@ or production retention policy.
 Historical CloudWatch metric data may remain under AWS retention after
 the metric filter is removed; the independent checks above establish
 absence of the specified lab resources, not erasure of AWS service history.
+
+
+## Repository audit — 24 October 2026
+
+See the [dated security audit and prioritised recommendations](SECURITY_AUDIT.md) for the reviewed source commit, verification results, open findings and evidence limitations.
+
