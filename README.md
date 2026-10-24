@@ -1,3 +1,5 @@
+![SkynetAI-Labs Lab 07 — Security Monitoring and Incident Response](skynet-lab-07.png)
+
 # GitHub DevSecOps Lab 07 — Security Monitoring and Incident Response
 
 A practical AWS learning lab demonstrating a denied API request,
