@@ -68,6 +68,12 @@ The simulation used one denied read-only request. The explicit deny
 was a preventive control configured before the event.
 No automated containment or session revocation was demonstrated.
 
+The published JSON is a selected, sanitised summary of the historical test.
+It supports request-ID/role correlation, alarm and queue timestamps, and
+recorded cleanup outcomes. Full raw logs, backup hashes and AWS API responses
+are held privately; this repository review did not independently re-run the
+live test or inspect those private originals.
+
 Selected evidence is published. Raw logs, account details, Terraform
 state, plans and private backups are excluded from Git.
 
@@ -84,7 +90,13 @@ It contains no deployment or destruction steps.
 
 **Verified CI result:** Checkov reported 54 passed, 10 failed and 0 skipped, then exited with code 1. The workflow failed on these unsuppressed findings.
 
-[Verified workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39696629214) — tested commit `630c081`.
+[Historical workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39696629214) — tested commit `630c081`.
+
+[Latest reviewed workflow run](https://github.com/SkynetAI-Labs/lab-07-security-monitoring-response/actions/runs/39992265407)
+completed on 23 October 2026 for commit
+`94ba90a5bd877db960645af1dc5ee64efff8ca55`.
+Formatting, backend-free initialisation and Terraform validation passed.
+Checkov again returned 54 passed, 10 failed, 0 skipped; the workflow failed.
 
 ## Scope and Limitations
 
@@ -116,6 +128,12 @@ inspect this portfolio evidence.
 For cleanup, stop logging, preserve evidence, verify and remove all S3
 object versions and delete markers, then destroy the Terraform resources.
 Lifecycle expiry alone is not immediate cleanup.
+Current S3 objects expire after seven days; noncurrent versions become
+eligible for permanent deletion after one day noncurrent. Overwrites and
+manual deletions can start that second clock earlier. CloudWatch retains
+events for one day and SQS retains messages for 86,400 seconds. These short
+lab periods require prompt evidence export; none is an immutable retention
+or production retention policy.
 
 Historical CloudWatch metric data may remain under AWS retention after
 the metric filter is removed; the independent checks above establish
