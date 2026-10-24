@@ -8,8 +8,9 @@ Authorised security-control test, not a confirmed compromise.
 - 2026-10-21 23:29:12: CloudTrail recorded DescribeInstances.
 - 2026-10-21 23:30:01.392: alarm changed from OK to ALARM.
 - 2026-10-21 23:30:01.443: CloudWatch reported successful SNS action.
-- The corresponding ALARM notification was retrieved from SQS.
-  Retrieval time is recorded in the private queue receipt.
+- 2026-10-21 23:32:17.226756: the corresponding ALARM notification was
+  retrieved from SQS, as recorded in the published sanitised results.
+  The full queue receipt remains private.
 
 ## Investigation
 - Region: eu-north-1.
@@ -59,3 +60,9 @@ No automated containment or session revocation has been demonstrated.
   alone does not prove the logging pipeline is healthy.
 - No broad account-compromise investigation was performed.
 - Local and GitHub Actions Checkov scans both reported 54 passed, 10 failed and 0 skipped. Findings remain open and unsuppressed. Cleanup verification completed.
+
+## Evidence provenance
+The public verified-results.json contains selected historical observations,
+not the full CloudTrail event, queue body, backup hashes or cleanup API output.
+This repository audit checked consistency of those published observations;
+it did not independently inspect private originals or repeat the live test.
